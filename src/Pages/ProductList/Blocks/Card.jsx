@@ -13,7 +13,9 @@ export const Card = ({ el }) => {
     }
 
     function subtract() {
-        setQty(qty - 1);
+        if (qty > 0) {
+            setQty(qty - 1);
+        }
     }
 
     return (
@@ -28,13 +30,12 @@ export const Card = ({ el }) => {
             </CardComponent>
             <p>Вы добавили {qty} раз(а)</p>
             <button onClick={add}>
-                +
+                + Add
                    </button>
 
             <button onClick={subtract}>
-                -
+                - Remove
             </button>
         </div>
-
     );
 }
